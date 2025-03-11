@@ -96,7 +96,7 @@
         //│  Z       │  X       │  C       │  D       │   V      │   │  N       │  M       │ , <      │ . >      │ / ?      │
             HRML(Z,        X,         C,         D)     &kp V          &kp K     HRMR(H,      COMMA,      DOT,      FSLH)
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                           &lt 2 &sk LSHFT &kp SPACE     &kp BSPC   &lt 1 DEL
+                                            &lt 2 TAB   &kp SPACE     &kp BSPC   &lt 1 DEL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -127,8 +127,8 @@
         //│  TILDE   │  F4      │          │  F6      │  F11     │   │  CAPS    │ CAPSWORD │  LBKT    │  RBKT    │ BSLS PIPE│
             &kp TILDE  &kp F4     &trans     &kp F6     &kp F11        &kp CAPS  &caps_word  &kp LBKT   &kp RBKT   &kp BSLH
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  F1      │  F2      │  F3      │  F10     │   │          │  TAB     │          │          │          │
-            &trans     &kp F1     &kp F2     &kp F3     &kp F10         &trans    &kp TAB     &trans     &trans     &trans
+        //│          │  F1      │  F2      │  F3      │  F10     │   │          │          │          │          │          │
+            &trans     &kp F1     &kp F2     &kp F3     &kp F10         &trans    &trans     &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &kp ENTER  &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
