@@ -9,7 +9,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 // Home row mods macro
-#define HRML(k1,k2,k3,k4) &ht LGUI k1  &ht LALT k2  &ht LCTRL k3  &ht LSHFT k4
+#define HRML(k1,k2,k3) &ht LALT k1  &ht LCTRL k2  &ht LSHFT k3
 #define HRMR(k1,k2,k3,k4) &ht RSHFT k1 &ht RCTRL k2  &ht RALT k3  &ht RGUI k4
 
 / {
@@ -48,17 +48,12 @@
             bindings = <&qu>;
         };
 
-        combo_bootl {
+        combo_kpz {
             timeout-ms = <50>;
-            key-positions = <0 2 4>;  
-            bindings = <&bootloader>;
+            key-positions = <20 21>;
+            bindings = <&kp Z>;
         };
 
-        combo_bootr {
-            timeout-ms = <50>;
-            key-positions = <5 7 9>;  
-            bindings = <&bootloader>;
-        };
 
     };
 
@@ -94,7 +89,7 @@
             &kp A      &kp R      &kp S      &kp T      &kp G          &kp M      &kp N      &kp E      &td_io     &kp O  
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  D       │   V      │   │  N       │  M       │ , <      │ . >      │ / ?      │
-            HRML(Z,        X,         C,         D)     &kp V          &kp K     HRMR(H,      COMMA,      DOT,      FSLH)
+            &sk LSHFT  HRML(X,     C,         D)        &kp V          &kp K     HRMR(H,      COMMA,      DOT,      FSLH)
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &lt 2 TAB   &kp SPACE     &kp BSPC   &lt 1 DEL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
