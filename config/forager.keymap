@@ -54,7 +54,10 @@
             bindings = <&kp Z>;
         };
 
-
+        combo_cdsft {
+            timeout-ms = <50>;
+            key-positions = <22 23>;
+            bindings = <&sk LSHFT>;
     };
 
     macros {
@@ -90,7 +93,7 @@
             &kp A      &kp R      &kp S      &kp T      &kp G          &kp M      &kp N      &kp E      &td_io     &kp O  
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  D       │   V      │   │  N       │  M       │ , <      │ . >      │ / ?      │
-            &sk LSHFT  HRML(X,     C,         D)        &kp V          &kp K     HRMR(H,      COMMA,      DOT,      FSLH)
+            &kp Z      HRML(X,     C,         D)        &kp V          &kp K     HRMR(H,      COMMA,      DOT,      FSLH)
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &lt 2 TAB   &kp SPACE     &kp BSPC   &lt 1 DEL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
