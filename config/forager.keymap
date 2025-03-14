@@ -9,7 +9,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 // Home row mods macro
-#define HRML(k1,k2,k3) &ht LALT k1  &ht LCTRL k2  &ht LSHFT k3
+#define HRML(k1,k2,k3,k4) &ht LGUI k1 &ht LALT k2  &ht LCTRL k3  &ht LSHFT k4
 #define HRMR(k1,k2,k3,k4) &ht RSHFT k1 &ht RCTRL k2  &ht RALT k3  &ht RGUI k4
 
 / { 
@@ -48,17 +48,17 @@
             bindings = <&qu>;
         };
 
-        combo_kpz {
-            timeout-ms = <50>;
-            key-positions = <20 21>;
-            bindings = <&kp Z>;
-        };
+//        combo_kpz {
+//            timeout-ms = <50>;
+//            key-positions = <20 21>;
+//            bindings = <&kp Z>;
+//        };
 
-        combo_cdsft {
-            timeout-ms = <50>;
-            key-positions = <22 23>;
-            bindings = <&sk LSHFT>;
-        };
+//        combo_cdsft {
+//            timeout-ms = <50>;
+//            key-positions = <22 23>;
+//            bindings = <&sk LSHFT>;
+//        };
 
     };
 
@@ -95,7 +95,7 @@
             &kp A      &kp R      &kp S      &kp T      &kp G          &kp M      &kp N      &kp E      &td_io     &kp O  
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  D       │   V      │   │  N       │  M       │ , <      │ . >      │ / ?      │
-            &kp Z      HRML(X,     C,         D)        &kp V          &kp K     HRMR(H,      COMMA,      DOT,      FSLH)
+            HRML(Z,     X,         C,         D)        &kp V          &kp K     HRMR(H,      COMMA,      DOT,      FSLH)
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &lt 2 TAB   &kp SPACE     &kp BSPC   &lt 1 DEL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -145,7 +145,7 @@
         //│  MOUSE2  │  BACK    │  FORWARD │  ENTER   │ SCRL_UP  │   │          │  C-A-D   │          │ PROFILE 0│          │
             &to 4    &kp LA(LEFT) &kp LA(RIGHT) &kp ENTER &msc SCRL_UP &trans   &kp LC(LA(DEL)) &trans &bt BT_SEL 0 &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  CTL-A   │  MB3     │   MB2    │  MB1       SCRL_DWN │   │          │          │          │ PROFILE 1│          │
+        //│  CTL-A   │  MB3     │   MB2    │  MB1     │ SCRL_DWN │   │          │          │          │ PROFILE 1│          │
            &kp LC(A)   &mkp MB3    &mkp MB2  &mkp MB1   &msc SCRL_DOWN  &trans    &trans     &trans    &bt BT_SEL 1 &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ ctl-z/gui│ ctl-x/alt│ ctl-c/ctl│ ctl-v/sft│  DEL     │   │          │          │ CLEAR BT │ PROFILE 2│          │
@@ -164,8 +164,8 @@
         //│  MOUSE   │ CTL-SFT-T│ C-S-TAB  │ CTL-TAB  │          │   │          │          │          │ PROFILE 0│          │
             &to 3     &kp LC(LS(T)) &kp LC(LS(TAB)) &kp LC(TAB) &trans &trans     &trans     &trans    &bt BT_SEL 0 &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │ PROFILE 1│          │
-            &trans     &trans     &trans     &trans     &trans         &trans     &trans    &trans     &bt BT_SEL 1 &trans
+        //│          │  MB3     │   MB2    │  MB1     │          │   │          │          │          │ PROFILE 1│          │
+            &trans     &mkp MB3    &mkp MB2  &mkp MB1     &trans         &trans     &trans    &trans     &bt BT_SEL 1 &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │ CLEAR BT │ PROFILE 2│          │
             &trans     &trans     &trans     &trans     &trans         &trans     &trans     &bt BT_CLR &bt BT_SEL 2 &trans
