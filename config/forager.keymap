@@ -48,6 +48,13 @@
             bindings = <&qu>;
         };
 
+        combo_you {
+            timeout-ms = <50>;
+            key-positions = <7 8>;
+            bindings = <&you>;
+
+        };
+        
 //        combo_kpz {
 //            timeout-ms = <50>;
 //            key-positions = <20 21>;
@@ -70,6 +77,15 @@
                 = <&macro_tap &kp Q &kp U>
                 ;
         };
+
+        you: you {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp Y &kp O &kp U>
+                ;
+        };
+        
     };    
 
 //    conditional_layers {
@@ -113,7 +129,7 @@
             &kp SEMI   &kp N4     &kp N5     &kp N6     &kp EQUAL      &kp UNDER  &kp LEFT   &kp DOWN   &kp RIGHT   &kp INS
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  GRAVE   │  1       │  2       │  3       │  BCKSLSH │   │  PG_DN   │  LSHFT   │  ESC     │  DEL     │  LGUI    │
-            &kp GRAVE  &mt LALT N1 &mt LCTRL N2 &mt LSHFT N3  &kp BSLH       &kp PG_DN  &kp LSHFT  &kp ESC    &kp DEL    &kp LGUI 
+            &kp GRAVE  &mt LALT N1 &mt LCTRL N2 &mt LSHFT N3  &kp BSLH  &kp PG_DN &kp LSHFT  &kp ESC    &kp DEL    &kp LGUI 
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &kp DOT    &kp N0         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -130,8 +146,8 @@
         //│  TILDE   │  F4      │          │  F6      │  F11     │   │  CAPS    │ CAPSWORD │  LBKT    │  RBKT    │ BSLS PIPE│
             &kp TILDE  &kp F4     &trans     &kp F6     &kp F11        &kp CAPS  &caps_word  &kp LBKT   &kp RBKT   &kp BSLH
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  F1      │  F2      │  F3      │  F10     │   │          │          │          │          │          │
-            &trans     &kp F1     &kp F2     &kp F3     &kp F10         &trans    &trans     &trans     &trans     &trans
+        //│   LGUI   │  F1      │  F2      │  F3      │  F10     │   │          │          │          │          │          │
+            &kp LGUI &mt LALT F1 &mt LCTRL F2 &mt LSHFT F3 &kp F10       &trans    &trans     &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &kp ENTER  &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -151,7 +167,7 @@
         //│ ctl-z/gui│ ctl-x/alt│ ctl-c/ctl│ ctl-v/sft│  DEL     │   │          │          │ CLEAR BT │ PROFILE 2│          │
            &mt LGUI (LC(Z)) &mt LALT (LC(X)) &mt LCTRL (LC(C)) &mt LSHFT (LC(V)) &kp DEL &trans &trans &bt BT_CLR &bt BT_SEL 2 &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &to 0      &kp BSPC        &trans     &trans
+                                              &to 0     &kp BSPC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -161,16 +177,16 @@
             display-name = "Mouse2";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  MOUSE   │ CTL-SFT-T│ C-S-TAB  │ CTL-TAB  │          │   │          │          │          │ PROFILE 0│          │
-            &to 3     &kp LC(LS(T)) &kp LC(LS(TAB)) &kp LC(TAB) &trans &trans     &trans     &trans    &bt BT_SEL 0 &trans
+        //│  MOUSE   │ CTL-SFT-T│ C-S-TAB  │ CTL-TAB  │  SCRL_UP │   │          │          │          │ PROFILE 0│          │
+            &to 3     &kp LC(LS(T)) &kp LC(LS(TAB)) &kp LC(TAB) &msc SCRL_UP &trans &trans  &trans     &bt BT_SEL 0 &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  MB3     │   MB2    │  MB1     │          │   │          │          │          │ PROFILE 1│          │
-            &trans     &mkp MB3    &mkp MB2  &mkp MB1     &trans         &trans     &trans    &trans     &bt BT_SEL 1 &trans
+        //│   CTL-T  │  CTL-W   │  MB2     │  MB1     │ SCRL_DWN │   │          │          │          │ PROFILE 1│          │
+            &kp LC(T)  &kp LC(W)  &mkp MB2  &mkp MB1   &msc SCRL_DOWN   &trans     &trans     &trans   &bt BT_SEL 1 &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │ CLEAR BT │ PROFILE 2│          │
-            &trans     &trans     &trans     &trans     &trans         &trans     &trans     &bt BT_CLR &bt BT_SEL 2 &trans
+        //│  LGUI    │   ALT    │   CTRL   │  SHIFT   │   DEL    │   │          │          │ CLEAR BT │ PROFILE 2│          │
+            &kp LGUI   &kp LALT   &kp LCTRL   &LSHFT     &kp DEL        &trans     &trans     &bt BT_CLR &bt BT_SEL 2 &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &to 0      &trans         &trans     &trans
+                                             &to 0      &kp BSPC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
