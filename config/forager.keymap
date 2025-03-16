@@ -52,7 +52,6 @@
             timeout-ms = <50>;
             key-positions = <7 8>;
             bindings = <&you>;
-
         };
         
 //        combo_kpz {
@@ -184,7 +183,7 @@
             &kp LC(T)  &kp LC(W)  &mkp MB2  &mkp MB1   &msc SCRL_DOWN   &trans     &trans     &trans   &bt BT_SEL 1 &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  LGUI    │   ALT    │   CTRL   │  SHIFT   │   DEL    │   │          │          │ CLEAR BT │ PROFILE 2│          │
-            &kp LGUI   &kp LALT   &kp LCTRL   &LSHFT     &kp DEL        &trans     &trans     &bt BT_CLR &bt BT_SEL 2 &trans
+            &kp LGUI   &kp LALT   &kp LCTRL &kp LSHFT   &kp DEL        &trans     &trans     &bt BT_CLR &bt BT_SEL 2 &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &to 0      &kp BSPC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
