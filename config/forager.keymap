@@ -123,7 +123,7 @@
            &key_repeat &kp W      &kp F      &kp P      &kp B          &kp J      &kp L      &kp U      &kp Y      &td_apsem
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  R       │  S       │  T       │  G       │   │  M       │  N       │  E       │  td IO   │  O       │
-            &kp A      &kp R      &kp S      &kp T      &kp G          &kp M      &kp N      &kp E      &td_io     &kp O  
+            &kp A      &kp R      &kp S      &kp T      &kp G          &kp M      &kp N      &kp E      &kp I     &kp O  
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  D       │   V      │   │  N       │  M       │ , <      │ . >      │ / ?      │
             HRML(Z,     X,         C,         D)        &kp V          &kp K     HRMR(H,      COMMA,      DOT,      FSLH)
