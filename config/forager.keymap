@@ -59,6 +59,24 @@
             key-positions = <6 7 8>;
             bindings = <&capyou>;
         };
+
+        combo_wgm {
+            timeout-ms = <50>;
+            key-positions = <3 4>;
+            bindings = <&wgm>;
+        };
+
+        combo_wem {
+            timeout-ms = <50>;
+            key-positions = <2 4>;
+            bindings = <&wem>;
+        };
+
+        combo_wpa {
+            timeout-ms = <50>;
+            key-positions = <1 4>;
+            bindings = <&wpa>;
+        };
         
 //        combo_kpz {
 //            timeout-ms = <50>;
@@ -101,6 +119,31 @@
                 , <&macro_tap &kp O &kp U>      
                 ;
         };
+        
+        wgm: wgm {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>
+                ;
+        };
+
+        wem: wem {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp S &kp T &kp O &kp R &kp E &kp N4 &kp N0 &kp N9 &kp AMPS &kp O &kp S &kp J &kp L &kp DOT &kp C &kp O &kp M>
+                ;
+        };
+
+        wpa: wpa {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp P &kp A &kp T &kp R &kp I &kp O &kp T &kp S &kp N2>
+                ;
+        };
+
     };    
 
 //    conditional_layers {
